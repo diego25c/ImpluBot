@@ -20,8 +20,22 @@ client.once('ready', () => {
     client.user.setActivity('Cum Simulator 2022', { type: 'PLAYING' });
 });
 
+client.on('message', async message =>{
+	if(message.content.startsWith('gay'))
+		message.channel.send('tu si e');
+	else if(message.content.startsWith('nm')){
+		message.channel.send('Depositen sus nm: ');
+		message.channel.send('nm.');
+	}
+	else if(message.content.startsWith('nerda')){
+		message.channel.send('QUIEN DIJO NELDA');
+		message.channel.send(message.author+'NO VUELVAS A DECIR ESO.');
+	}
+})
+
 client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
+	if (!interaction.isCommand()) 
+		return;
 
 	const command = client.commands.get(interaction.commandName);
 
@@ -31,7 +45,7 @@ client.on('interactionCreate', async interaction => {
 		await command.execute(interaction);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		await interaction.reply({ content: 'No ta el comando man', ephemeral: true });
 	}
 });
 
