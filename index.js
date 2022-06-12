@@ -27,7 +27,7 @@ client.on('messageCreate', async message => {
 	const text = message.content.toLowerCase();
 
 	if(text=='gay'){
-		return message.reply('gay')
+		return message.reply('tu si e')
 			.then(() => console.log(message.author+" - gay"))
 			.catch(console.error);
 	}
@@ -37,7 +37,7 @@ client.on('messageCreate', async message => {
 			.catch(console.error);
 	}
 	else if(text=='nerda'){
-		return message.reply('QUIEN DIJO NELDA \n" +message.author+"NO VUELVAS A DECIR ESO.')
+		return message.reply("QUIEN DIJO NELDA \n"+message.author+"NO VUELVAS A DECIR ESO.")
 			.then(() => console.log(message.author+" - nerda"))
 			.catch(console.error);
 	}
