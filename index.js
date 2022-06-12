@@ -28,17 +28,27 @@ client.on('messageCreate', async message => {
 
 	if(text=='gay'){
 		return message.reply('tu si e')
-			.then(() => console.log(message.author+" - gay"))
+			.then(() => console.log(message.author.user+" - gay"))
 			.catch(console.error);
 	}
 	else if(text=='nm'){
 		return message.reply('Depositen sus nm: \n nm')
-			.then(() => console.log(message.author+" - nm"))
+			.then(() => console.log(message.author.user+" - nm"))
 			.catch(console.error);
 	}
 	else if(text=='nerda'){
-		return message.reply("QUIEN DIJO NELDA \n"+message.author+"NO VUELVAS A DECIR ESO.")
-			.then(() => console.log(message.author+" - nerda"))
+		return message.reply("QUIEN DIJO NELDA \n"+message.author.user+"NO VUELVAS A DECIR ESO.")
+			.then(() => console.log(message.author.user+" - nerda"))
+			.catch(console.error);
+	}
+	else if(text=='prupru'){
+		return message.reply("memesitu :3")
+			.then(() => console.log(message.author.user+" - prupru"))
+			.catch(console.error);
+	}
+	else if(text=='node'){
+		return message.reply("https://i.redd.it/9zc150kzxtb71.jpg")
+			.then(() => console.log(message.author.user+" - node"))
 			.catch(console.error);
 	}
 });
