@@ -26,17 +26,17 @@ client.on('messageCreate', async message => {
 	const text = message.content.toLowerCase();
 
 	if(text=='gay'){
-		message.reply('gay')
+		return message.reply('gay')
 			.then(() => console.log(message.author+" - gay"))
 			.catch(console.error);
 	}
 	else if(text=='nm'){
-		message.reply('Depositen sus nm: \n nm')
+		return message.reply('Depositen sus nm: \n nm')
 			.then(() => console.log(message.author+" - nm"))
 			.catch(console.error);
 	}
 	else if(text=='nerda'){
-		message.reply('QUIEN DIJO NELDA \n" +message.author+"NO VUELVAS A DECIR ESO.')
+		return message.reply('QUIEN DIJO NELDA \n" +message.author+"NO VUELVAS A DECIR ESO.')
 			.then(() => console.log(message.author+" - nerda"))
 			.catch(console.error);
 	}
