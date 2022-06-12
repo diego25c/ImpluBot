@@ -21,16 +21,20 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', (message) => {
-	if(message.content==='gay')
+	if(message.content==='gay'){
+		console.log(message.author+" - gay");
 		message.reply({
 			content: "tu si e",
 		});
+	}
 	else if(message.content==='nm'){
+		console.log(message.author+" - nm");
 		message.reply({
 			content: "Depositen sus nm: \n nm",
 		});
 	}
 	else if(message.content==='nerda'){
+		console.log(message.author+" - nerda");
 		message.reply({
 			content: "QUIEN DIJO NELDA \n" +message.author+"NO VUELVAS A DECIR ESO.",
 		});
