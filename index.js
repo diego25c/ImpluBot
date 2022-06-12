@@ -20,16 +20,20 @@ client.once('ready', () => {
     client.user.setActivity('Cum Simulator 2022', { type: 'PLAYING' });
 });
 
-client.on('message', async message =>{
+client.on('messageCreate', (message) => {
 	if(message.content==='gay')
-		message.channel.send('tu si e');
+		message.reply({
+			content: "tu si e",
+		});
 	else if(message.content==='nm'){
-		message.channel.send('Depositen sus nm: ');
-		message.channel.send('nm.');
+		message.reply({
+			content: "Depositen sus nm: \n nm",
+		});
 	}
 	else if(message.content==='nerda'){
-		message.channel.send('QUIEN DIJO NELDA');
-		message.channel.send(message.author+'NO VUELVAS A DECIR ESO.');
+		message.reply({
+			content: "QUIEN DIJO NELDA \n" +message.author+"NO VUELVAS A DECIR ESO.",
+		});
 	}
 })
 
