@@ -21,13 +21,13 @@ client.once('ready', () => {
 });
 
 client.on('message', async message =>{
-	if(message.content.startsWith('gay'))
+	if(message.content==='gay')
 		message.channel.send('tu si e');
-	else if(message.content.startsWith('nm')){
+	else if(message.content==='nm'){
 		message.channel.send('Depositen sus nm: ');
 		message.channel.send('nm.');
 	}
-	else if(message.content.startsWith('nerda')){
+	else if(message.content==='nerda'){
 		message.channel.send('QUIEN DIJO NELDA');
 		message.channel.send(message.author+'NO VUELVAS A DECIR ESO.');
 	}
