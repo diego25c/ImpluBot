@@ -3,7 +3,8 @@ const path = require('node:path');
 const { Client, Collection, Intents } = require('discord.js');
 const token = process.env.token;
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const intents = ['DIRECT_MESSAGES', 'DIRECT_MESSAGE_REACTIONS', 'GUILD_MESSAGES', 'GUILD_MESSAGE_REACTIONS', 'GUILDS'];
+const client = new Client({ intents });
 
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
