@@ -28,7 +28,7 @@ client.on('messageCreate', async message => {
 	if(message.author.bot || !message.guild || !message.channel) return;
 
 	const text = message.content.toLowerCase();
-	if(text!='nm'){
+	if(text!='nm' && rachaNmBool){
 		rachaNmBool = false;
 		rachaNm = 0;
 	}else{
