@@ -28,10 +28,10 @@ client.on('messageCreate', async message => {
 	if(message.author.bot || !message.guild || !message.channel) return;
 
 	const text = message.content.toLowerCase();
-	if(text!='nm' && !rachaNmBool){
+	if(text!='nm'){
 		rachaNmBool = false;
 		rachaNm = 0;
-	}else{
+	}else if(text=='nm' && rachaNmBool){
 		rachaNm++;
 		message.reply('HHH hh hH HRACHA DE NM: '+rachaNm+' NM')
 			.then(() => console.log(message.member.displayName+" - rachaNm"+rachaNm))
