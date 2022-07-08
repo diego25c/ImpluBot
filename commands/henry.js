@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { joinVoice, playVoice, leaveVoice } = require("../shared/voice.js");
+const { joinVoice, playVoiceLocal: playVoice, leaveVoice } = require("../shared/voice.js");
 
 const audioPlayers = new Map();
 
@@ -10,6 +10,6 @@ module.exports = {
 	async execute(interaction) {
 		console.log("henry");
         joinVoice(interaction);
-        await playVoice(interaction, "henry.mp3");
+        await playVoiceLocal(interaction, "henry.mp3");
     },
 };

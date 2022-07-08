@@ -2,6 +2,7 @@
 
 const { createAudioPlayer, joinVoiceChannel, getVoiceConnection, VoiceConnectionStatus, entersState, createAudioResource, StreamType } = require("@discordjs/voice");
 const { join } = require('node:path');
+const { requestSpeech } = require("../shared/fakeYou.js");
 const audioPlayers = new Map();
 
 /*
@@ -49,7 +50,7 @@ module.exports.leaveVoice = (interaction) => {
   Description: Requests and plays speech over voice chat, assuming raw format
   Returns: None
 */
-module.exports.playVoice = async(interaction, source) => {
+module.exports.playVoiceLocal = async(interaction, source) => {
 
 	const connection = getVoiceConnection(interaction.guildId);
 	if (!connection) {
@@ -66,4 +67,43 @@ module.exports.playVoice = async(interaction, source) => {
     const resource = createAudioResource(join("resources",source));
     player.play(resource);
 	interaction.reply("a");
+}
+
+module.exports.playVoiceFakeYou = async(interaction, voiceInfo, message) => {
+
+	const connection = getVoiceConnection(interaction.guildId);
+	if (!connection) {
+		interaction.reply("no toi en vois chanil").catch(console.error);
+		return;
+	}
+
+	const player = audioPlayers.get(interaction.guildId);
+	if (!player) {
+		interaction.reply(`ehror`).catch(console.error);
+		return;
+	}
+
+	await interaction.reply({
+		content: `perese...`,
+		ephemeral: true
+	}).catch(console.error);
+
+	// Launch speech request and poll until completion
+	requestSpeech(voiceInfo, message).then(url => {
+
+		// Send new message to avoid 15 minute interaction expiry time
+		const resource = createAudioResource(url, {
+			inputType: StreamType.Raw
+		});
+		player.play(resource);
+
+		resource.playStream.on("error", error => {
+			interaction.channel.send(`ehror`).catch(console.error);
+			console.error(error);
+		});
+
+	}).catch(error => {
+		interaction.channel.send(`ehrors`).catch(console.error);
+		console.error(error);
+	});
 }
