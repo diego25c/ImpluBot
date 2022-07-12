@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { joinVoice, playVoiceLocal: playVoice, leaveVoice } = require("../shared/voice.js");
+const { joinVoice, playVoiceLocal, playVoice, leaveVoice } = require("../shared/voice.js");
 
 const audioPlayers = new Map();
 
