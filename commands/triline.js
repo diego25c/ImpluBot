@@ -20,7 +20,7 @@ module.exports = {
 			return;
 		}
         
-        // token auronplay
+        // token triline
         let voice = "TM:5x6m0n6wqtpw"
 
         joinVoice(interaction);
