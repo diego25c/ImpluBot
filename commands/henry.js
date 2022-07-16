@@ -4,7 +4,7 @@ const path = require('node:path');
 const fs = require('node:fs');
 
 const audios = [];
-const audiosPath = path.join(__dirname, 'resources');
+const audiosPath = path.join(__dirname, '../resources');
 const audioFiles = fs.readdirSync(audiosPath).filter(file => file.endsWith('.mp3'));
 
 for (const file of audioFiles) {
