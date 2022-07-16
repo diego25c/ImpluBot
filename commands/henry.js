@@ -1,17 +1,13 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { joinVoice, playVoiceLocal, playVoice, leaveVoice } = require("../shared/voice.js");
-const path = require('node:path');
 const fs = require('node:fs');
 
-const audios = [];
-const audiosPath = path.join(__dirname, '../resources');
-const audioFiles = fs.readdirSync(audiosPath).filter(file => file.endsWith('.mp3'));
+const dir = require("path").join("resources")
+let audios = [];
 
-for (const file of audioFiles) {
-	const filePath = path.join(audiosPath, file);
-	const audio = require(filePath);
-	audios.push(audio.data.toJSON());
-}
+fs.readdirSync(dir).forEach(file => {
+	audios.push(file);
+});
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -20,7 +16,11 @@ module.exports = {
 	async execute(interaction) {
 		console.log("henry");
         joinVoice(interaction);
-		let audioName = audios[Math.floor(Math.random()*items.length)];
+		let audioName = audios[Math.floor(Math.random()*audios.length)];
+		await interaction.reply({
+			content: `el henry`,
+			ephemeral: true
+		}).catch(console.error);
         await playVoiceLocal(interaction, audioName);
     },
 };

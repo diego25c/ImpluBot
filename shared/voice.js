@@ -66,7 +66,6 @@ module.exports.playVoiceLocal = async(interaction, source) => {
 
     const resource = createAudioResource(join("resources",source));
     player.play(resource);
-	interaction.reply("a");
 }
 
 module.exports.playVoiceFakeYou = async(interaction, voiceInfo, message) => {
