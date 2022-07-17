@@ -45,19 +45,24 @@ client.on('messageCreate', async message => {
 			.then(() => console.log(message.member.displayName+" - gay"))
 			.catch(console.error);
 	}
-	else if(text=='nerda'){
+	else if(text.includes('nerda')){
 		return message.reply("QUIEN DIJO NELDA \n"+message.member.displayName+" NO VUELVAS A DECIR ESO.")
 			.then(() => console.log(message.member.displayName+" - nerda"))
 			.catch(console.error);
 	}
-	else if(text=='prupru'){
+	else if(text.includes('prupru')){
 		return message.reply("memesitu :3")
 			.then(() => console.log(message.member.displayName+" - prupru"))
 			.catch(console.error);
 	}
-	else if(text=='node'){
+	else if(text.includes('node')){
 		return message.reply("https://i.redd.it/9zc150kzxtb71.jpg")
 			.then(() => console.log(message.member.displayName+" - node"))
+			.catch(console.error);
+	}
+	else if(text.includes('cromo') || text.includes('cremas')){
+		return message.reply("OLEEEEEE")
+			.then(() => console.log(message.member.displayName+" - cromo"))
 			.catch(console.error);
 	}
 });

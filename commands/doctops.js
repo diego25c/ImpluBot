@@ -25,6 +25,7 @@ module.exports = {
 
         joinVoice(interaction);
         await playVoiceFakeYou(interaction, voice, message);
+		console.log('doctops '+message);
 
 	}
 };
