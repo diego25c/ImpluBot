@@ -46,7 +46,7 @@ function requestSpeechFile(voice, message) {
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("auronplay")
-		.setDescription("Auronplay te habla")
+		.setDescription("Abduskan")
 		.addStringOption(option =>
 			option.setName("mensaje")
 				.setDescription("Mensaje")

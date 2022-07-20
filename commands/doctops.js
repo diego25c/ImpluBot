@@ -7,7 +7,7 @@ const { joinVoice, playVoiceFakeYou } = require("../shared/voice.js");
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("doctops")
-		.setDescription("Doctops te habla")
+		.setDescription("Desde demonio nemadore, hasta demonio loqiadore")
 		.addStringOption(option =>
 			option.setName("mensaje")
 				.setDescription("Mensaje")

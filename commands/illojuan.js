@@ -6,8 +6,8 @@ const { joinVoice, playVoiceFakeYou } = require("../shared/voice.js");
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName("triline")
-		.setDescription("EEEEEEEEEEESTAS SON")
+		.setName("illojuan")
+		.setDescription("Illooo")
 		.addStringOption(option =>
 			option.setName("mensaje")
 				.setDescription("Mensaje")
@@ -20,12 +20,12 @@ module.exports = {
 			return;
 		}
         
-        // token triline
-        let voice = "TM:5x6m0n6wqtpw"
+        // token doctops
+        let voice = "TM:q8vnck5cpb6t"
 
         joinVoice(interaction);
         await playVoiceFakeYou(interaction, voice, message);
-		console.log('triline '+message);
+		console.log('doctops '+message);
 
 	}
 };
